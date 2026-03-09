@@ -27,7 +27,7 @@ enterprise Java backend development in an insurance technology context.
 ## Project Phases
 
 - [x] Phase 0: Project setup, Gradle configuration, Git workflow
-- [ ] Phase 1: Java fundamentals and domain modelling
+- [x] Phase 1: Java fundamentals and domain modelling
 - [ ] Phase 2: Database layer with Hibernate and JPA
 - [ ] Phase 3: Service and Repository layers
 - [ ] Phase 4: REST API Controllers
