@@ -29,8 +29,8 @@ enterprise Java backend development in an insurance technology context.
 - [x] Phase 0: Project setup, Gradle configuration, Git workflow
 - [x] Phase 1: Java fundamentals and domain modelling (Claim entity, ClaimStatus enum)
 - [x] Phase 2: Repository, Service layer, DTOs and Exception handling
-- [ ] Phase 3: REST API Controllers (making the API callable)
-- [ ] Phase 4: Validation and Error Handling (global exception handler)
+- [x] Phase 3: REST API Controllers (making the API callable)
+- [x] Phase 4: Validation and Error Handling (global exception handler)
 - [ ] Phase 5: XML Report Generation
 - [ ] Phase 6: Polish and final documentation
 
