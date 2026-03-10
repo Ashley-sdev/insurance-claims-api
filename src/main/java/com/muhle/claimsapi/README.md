@@ -31,7 +31,7 @@ enterprise Java backend development in an insurance technology context.
 - [x] Phase 2: Repository, Service layer, DTOs and Exception handling
 - [x] Phase 3: REST API Controllers (making the API callable)
 - [x] Phase 4: Validation and Error Handling (global exception handler)
-- [ ] Phase 5: XML Report Generation
+- [x] Phase 5: XML Report Generation
 - [ ] Phase 6: Polish and final documentation
 
 ## API Endpoints (coming soon)
