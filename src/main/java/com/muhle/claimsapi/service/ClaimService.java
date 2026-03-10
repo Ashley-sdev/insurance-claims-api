@@ -5,8 +5,10 @@ import com.muhle.claimsapi.entity.Claim;
 import com.muhle.claimsapi.entity.ClaimStatus;
 import com.muhle.claimsapi.exception.ClaimNotFoundException;
 import com.muhle.claimsapi.repository.ClaimRepository;
+import com.muhle.claimsapi.dto.ClaimXmlReport;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -79,5 +81,23 @@ public class ClaimService {
         response.setCreatedAt(claim.getCreatedAt());
         response.setUpdatedAt(claim.getUpdatedAt());
         return response;
+    }
+    public ClaimXmlReport getClaimAsXmlReport(Long id) {
+        Optional<Claim> result = claimRepository.findById(id);
+        if (result.isPresent()) {
+            Claim claim = result.get();
+            return new ClaimXmlReport(
+                    claim.getId(),
+                    claim.getClaimNumber(),
+                    claim.getPolicyholderName(),
+                    claim.getDescription(),
+                    claim.getClaimAmount(),
+                    claim.getStatus(),
+                    claim.getCreatedAt(),
+                    claim.getUpdatedAt()
+            );
+        } else {
+            throw new ClaimNotFoundException(id);
+        }
     }
 }

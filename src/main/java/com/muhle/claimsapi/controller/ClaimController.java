@@ -1,6 +1,7 @@
 package com.muhle.claimsapi.controller;
 import com.muhle.claimsapi.dto.ClaimRequest;
 import com.muhle.claimsapi.dto.ClaimResponse;
+import com.muhle.claimsapi.dto.ClaimXmlReport;
 import com.muhle.claimsapi.entity.ClaimStatus;
 import com.muhle.claimsapi.service.ClaimService;
 import jakarta.validation.Valid;
@@ -9,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
+import org.springframework.http.MediaType;
 
 @RestController
 @RequestMapping("/api/claims")
@@ -54,5 +56,13 @@ public class ClaimController {
             @PathVariable Long id) {
         claimService.deleteClaim(id);
         return ResponseEntity.noContent().build();
+    }
+    // GET /api/claims/{id}/report - Export claim as XML report
+    @GetMapping(value = "/{id}/report",
+            produces = MediaType.APPLICATION_XML_VALUE)
+    public ResponseEntity<ClaimXmlReport> getClaimXmlReport(
+            @PathVariable Long id) {
+        ClaimXmlReport report = claimService.getClaimAsXmlReport(id);
+        return ResponseEntity.ok(report);
     }
 }
